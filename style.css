@@ -1,0 +1,13 @@
+.container > div {
+  border: 1px solid black;
+  width: 16px;
+  height: 16px;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(16, 16px);
+  grid-template-rows: repeat(16, 16px);
+}
