@@ -9,29 +9,49 @@ btn.classList.add("btn");
 document.body.insertBefore(btn, container);
 btn.textContent = "Change Grid-Size";
 
-// 256 squares
-for (let i = 1; i <= 256; i++) {
-  const div = document.createElement("div");
-  div.classList.add(`grid`);
-  container.appendChild(div);
+// add mouseover event to the children of the .container class
+function mouseOverEvent() {
+  const grids = document.querySelectorAll(".grid");
+  grids.forEach((grid) => {
+    grid.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor = "yellow";
+    });
+  });
 }
 
-// squares - mouseover event
-const grids = document.querySelectorAll(".grid");
-grids.forEach((grid) => {
-  grid.addEventListener("mouseover", (event) => {
-    event.target.style.backgroundColor = "blue";
-  });
-});
+function makeGrid(squares = 256, row = 16, column = 16) {
+  container.style.gridTemplateColumns = `repeat(${column}, 16px)`;
+  container.style.gridTemplateRows = `repeat(${row}, 16px)`;
+
+  for (let i = 1; i <= squares; i++) {
+    const div = document.createElement("div");
+    div.classList.add(`grid`);
+    container.appendChild(div);
+  }
+
+  mouseOverEvent();
+}
+
+function removeGrid() {
+  if (container.hasChildNodes) {
+    const grids = document.querySelectorAll(".grid");
+    grids.forEach((grid) => {
+      grid.remove();
+    });
+  }
+}
+
+// 256 squares grid 16x16
+makeGrid();
 
 // btn - click event
 btn.addEventListener("click", (event) => {
-  const squares = prompt(
+  const square = prompt(
     "Enter number of squares per side for the new grid: ",
     0
   );
 
-  while (container.hasChildNodes) {
-    container.removeChild(container.firstChild);
-  }
+  const totalSquares = square * square;
+  removeGrid();
+  makeGrid(totalSquares, square, square);
 });
