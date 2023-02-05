@@ -6,8 +6,8 @@
 
 .container {
   display: grid;
-  justify-content: center;
-  align-items: center;
   grid-template-columns: repeat(16, 16px);
   grid-template-rows: repeat(16, 16px);
+  justify-content: center;
+  align-items: center;
 }
