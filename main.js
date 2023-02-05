@@ -9,8 +9,8 @@ btn.classList.add("btn");
 document.body.insertBefore(btn, container);
 btn.textContent = "Change Grid-Size";
 
-// add mouseover event to the children of the .container class
-function mouseOverEvent() {
+// Add Hovering effect to grid's squares so that grid divs change color
+function addMouseOverEvent() {
   const grids = document.querySelectorAll(".grid");
   grids.forEach((grid) => {
     grid.addEventListener("mouseover", (event) => {
@@ -19,6 +19,7 @@ function mouseOverEvent() {
   });
 }
 
+// Make new Grid
 function makeGrid(squares = 256, row = 16, column = 16) {
   container.style.gridTemplateColumns = `repeat(${column}, 16px)`;
   container.style.gridTemplateRows = `repeat(${row}, 16px)`;
@@ -29,9 +30,10 @@ function makeGrid(squares = 256, row = 16, column = 16) {
     container.appendChild(div);
   }
 
-  mouseOverEvent();
+  addMouseOverEvent();
 }
 
+// remove the existing grid
 function removeGrid() {
   if (container.hasChildNodes) {
     const grids = document.querySelectorAll(".grid");
@@ -41,7 +43,7 @@ function removeGrid() {
   }
 }
 
-// 256 squares grid 16x16
+// 256 squares grid - 16 square per side
 makeGrid();
 
 // btn - click event
