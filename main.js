@@ -26,6 +26,22 @@ black.textContent = "Black";
 document.body.insertBefore(black, rgb);
 black.addEventListener("click", blackHoverEffect);
 
+// eraser button
+const eraser = document.createElement("button");
+eraser.textContent = "Eraser";
+document.body.insertBefore(eraser, msg);
+eraser.addEventListener("click", erase);
+
+// erase hoverEffect
+function erase() {
+  const grids = document.querySelectorAll(".grid");
+  grids.forEach((grid) => {
+    grid.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor = "";
+    });
+  });
+}
+
 // black hoverEffect
 function blackHoverEffect() {
   const grids = document.querySelectorAll(".grid");
