@@ -15,7 +15,7 @@ document.body.insertBefore(msg, container);
 msg.style.color = "red";
 
 // Add Hovering effect to grid's squares so that grid divs change color
-function addMouseOverEvent() {
+function addHoverEffect() {
   const grids = document.querySelectorAll(".grid");
   grids.forEach((grid) => {
     grid.addEventListener("mouseover", (event) => {
@@ -35,7 +35,7 @@ function makeGrid(squares = 256, row = 16, column = 16) {
     container.appendChild(div);
   }
 
-  addMouseOverEvent();
+  addHoverEffect();
 }
 
 // remove the existing grid
