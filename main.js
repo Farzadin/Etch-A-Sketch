@@ -20,6 +20,22 @@ rgb.textContent = "RGB";
 document.body.insertBefore(rgb, msg);
 rgb.addEventListener("click", rgbHoverEffect);
 
+// black button
+const black = document.createElement("button");
+black.textContent = "Black";
+document.body.insertBefore(black, rgb);
+black.addEventListener("click", blackHoverEffect);
+
+// black hoverEffect
+function blackHoverEffect() {
+  const grids = document.querySelectorAll(".grid");
+  grids.forEach((grid) => {
+    grid.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor = "black";
+    });
+  });
+}
+
 // rgb hoverEffect
 function rgbHoverEffect() {
   const grids = document.querySelectorAll(".grid");
@@ -30,6 +46,7 @@ function rgbHoverEffect() {
     });
   });
 }
+
 // Add Hovering effect to grid's squares so that grid divs change color
 function addHoverEffect() {
   const grids = document.querySelectorAll(".grid");
