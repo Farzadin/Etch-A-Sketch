@@ -3,7 +3,7 @@ const container = document.createElement("div");
 container.classList.add("container");
 document.body.appendChild(container);
 
-// btn
+// Change Grid Size button
 const btn = document.createElement("button");
 btn.classList.add("btn");
 document.body.insertBefore(btn, container);
@@ -14,6 +14,22 @@ const msg = document.createElement("div");
 document.body.insertBefore(msg, container);
 msg.style.color = "red";
 
+// rgb button
+const rgb = document.createElement("button");
+rgb.textContent = "RGB";
+document.body.insertBefore(rgb, msg);
+rgb.addEventListener("click", rgbHoverEffect);
+
+// rgb hoverEffect
+function rgbHoverEffect() {
+  const grids = document.querySelectorAll(".grid");
+  grids.forEach((grid) => {
+    grid.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor =
+        "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
+    });
+  });
+}
 // Add Hovering effect to grid's squares so that grid divs change color
 function addHoverEffect() {
   const grids = document.querySelectorAll(".grid");
