@@ -19,7 +19,7 @@ function addHoverEffect() {
   const grids = document.querySelectorAll(".grid");
   grids.forEach((grid) => {
     grid.addEventListener("mouseover", (event) => {
-      event.target.style.backgroundColor = "yellow";
+      event.target.style.backgroundColor = "black";
     });
   });
 }
