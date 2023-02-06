@@ -1,3 +1,3 @@
 {
-  "conventionalCommits.scopes": ["cgs-button", "title"]
+  "conventionalCommits.scopes": ["cgs-button", "title", "hoverEffect"]
 }
