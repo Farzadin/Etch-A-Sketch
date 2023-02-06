@@ -32,6 +32,20 @@ eraser.textContent = "Eraser";
 document.body.insertBefore(eraser, msg);
 eraser.addEventListener("click", erase);
 
+// clear button
+const clear = document.createElement("button");
+clear.textContent = "clear";
+document.body.insertBefore(clear, msg);
+clear.addEventListener("click", clearGrid);
+
+// clear function
+function clearGrid() {
+  const grids = document.querySelectorAll(".grid");
+  grids.forEach((grid) => {
+    grid.style.backgroundColor = "";
+  });
+}
+
 // erase hoverEffect
 function erase() {
   const grids = document.querySelectorAll(".grid");
