@@ -1,7 +1,17 @@
+// header
+const header = document.querySelector("header");
+// main
+const main = document.querySelector("main");
+// footer
+const footer = document.querySelector("footer");
+
 // container
 const container = document.createElement("div");
 container.classList.add("container");
 document.body.appendChild(container);
+
+// btn-container
+const buttons = document.querySelector(".btn-container");
 
 // Change Grid Size button
 const btn = document.createElement("button");
@@ -142,3 +152,11 @@ btn.addEventListener("click", (event) => {
     makeGrid(totalSquares, square, square);
   }
 });
+
+main.appendChild(container);
+main.appendChild(msg);
+buttons.appendChild(btn);
+buttons.appendChild(black);
+buttons.appendChild(rgb);
+buttons.appendChild(eraser);
+buttons.appendChild(clear);
