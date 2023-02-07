@@ -1,7 +1,11 @@
+// grid page
+const gridPage = document.querySelector(".grid-page");
 // header
 const header = document.querySelector("header");
 // main
 const main = document.querySelector("main");
+// wrapper
+const wrapper = document.querySelector(".wrapper");
 // footer
 const footer = document.querySelector("footer");
 
@@ -153,10 +157,16 @@ btn.addEventListener("click", (event) => {
   }
 });
 
-main.appendChild(container);
 main.appendChild(msg);
+
+wrapper.appendChild(container);
+
 buttons.appendChild(btn);
 buttons.appendChild(black);
 buttons.appendChild(rgb);
 buttons.appendChild(eraser);
 buttons.appendChild(clear);
+
+gridPage.appendChild(header);
+gridPage.appendChild(main);
+gridPage.appendChild(footer);
