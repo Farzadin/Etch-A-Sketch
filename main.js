@@ -2,6 +2,8 @@
 const gridPage = document.querySelector(".grid-page");
 // header
 const header = document.querySelector("header");
+// options
+const section = document.querySelector("section");
 // main
 const main = document.querySelector("main");
 // wrapper
@@ -166,7 +168,9 @@ buttons.appendChild(black);
 buttons.appendChild(rgb);
 buttons.appendChild(eraser);
 buttons.appendChild(clear);
+section.appendChild(buttons);
 
 gridPage.appendChild(header);
 gridPage.appendChild(main);
 gridPage.appendChild(footer);
+gridPage.insertBefore(section, main);
