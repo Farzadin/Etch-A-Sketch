@@ -123,10 +123,19 @@ btn.addEventListener("click", (event) => {
 
   if (square < 0) {
     msg.textContent = "sorry amount of squares per side cant be negative";
+    setTimeout(() => {
+      msg.textContent = "";
+    }, 3000);
   } else if (square > 100) {
     msg.textContent = "amount of squares per sides cant be greater than 100";
+    setTimeout(() => {
+      msg.textContent = "";
+    }, 3000);
   } else if (isNaN(square)) {
     msg.textContent = "please use only numbers";
+    setTimeout(() => {
+      msg.textContent = "";
+    }, 3000);
   } else {
     const totalSquares = square * square;
     removeGrid();
