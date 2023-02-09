@@ -1,7 +1,23 @@
+// grid page
+const gridPage = document.querySelector(".grid-page");
+// header
+const header = document.querySelector("header");
+// options
+const section = document.querySelector("section");
+// main
+const main = document.querySelector("main");
+// wrapper
+const wrapper = document.querySelector(".wrapper");
+// footer
+const footer = document.querySelector("footer");
+
 // container
 const container = document.createElement("div");
 container.classList.add("container");
 document.body.appendChild(container);
+
+// btn-container
+const buttons = document.querySelector(".btn-container");
 
 // Change Grid Size button
 const btn = document.createElement("button");
@@ -122,17 +138,27 @@ btn.addEventListener("click", (event) => {
   );
 
   if (square < 0) {
-    msg.textContent = "sorry amount of squares per side cant be negative";
+    msg.textContent = "ERROR: amount of squares per side cant be negative";
+    setTimeout(() => {
+      msg.textContent = "";
+    }, 3000);
     setTimeout(() => {
       msg.textContent = "";
     }, 3000);
   } else if (square > 100) {
-    msg.textContent = "amount of squares per sides cant be greater than 100";
+    msg.textContent =
+      "ERROR: amount of squares per sides cant be greater than 100";
+    setTimeout(() => {
+      msg.textContent = "";
+    }, 3000);
     setTimeout(() => {
       msg.textContent = "";
     }, 3000);
   } else if (isNaN(square)) {
-    msg.textContent = "please use only numbers";
+    msg.textContent = "ERROR: please use only numbers";
+    setTimeout(() => {
+      msg.textContent = "";
+    }, 3000);
     setTimeout(() => {
       msg.textContent = "";
     }, 3000);
@@ -142,3 +168,19 @@ btn.addEventListener("click", (event) => {
     makeGrid(totalSquares, square, square);
   }
 });
+
+header.appendChild(msg);
+
+wrapper.appendChild(container);
+
+buttons.appendChild(btn);
+buttons.appendChild(black);
+buttons.appendChild(rgb);
+buttons.appendChild(eraser);
+buttons.appendChild(clear);
+section.appendChild(buttons);
+
+gridPage.appendChild(header);
+gridPage.appendChild(main);
+gridPage.appendChild(footer);
+gridPage.insertBefore(section, main);
