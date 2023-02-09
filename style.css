@@ -7,20 +7,26 @@
   display: grid;
   grid-gap: 5rem;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-template-rows: 100px 1fr 100px;
+  grid-template-rows: 10% 1fr 11%;
   grid-template-areas:
     "h h h h h h h"
     "s m m m m m m"
     "f f f f f f f";
 }
 
+body {
+  background-color: #ffffff;
+}
 header {
   grid-area: h;
   display: flex;
-  margin: 0;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  margin-top: 1.5rem;
+  color: #0969da;
+  font-weight: 600;
+  gap: 2rem;
 }
 
 section {
@@ -35,16 +41,31 @@ main {
   grid-area: m;
   display: flex;
   gap: 8rem;
-  margin: 0 auto;
   align-items: center;
 }
 
 footer {
-  border-top: 1px solid black;
   grid-area: f;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #0969da;
+}
+
+p {
+  font-weight: 800;
+}
+
+button {
+  color: var(#24292f) !important;
+  background-image: linear-gradient(#ffffff, #ffffff),
+    linear-gradient(45deg, #b63c8e, #0a6cdf);
+  background-clip: content-box, border-box;
+  background-origin: border-box;
+  border: 1px solid transparent !important;
+  box-shadow: 0 3px 6px rgba(140, 149, 159, 0.15), 2px 1000px 1px #ffffff inset !important;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .btn-container {
@@ -61,7 +82,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 150px;
+  margin-left: 185px;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
   width: 960px;
   height: 600px;
